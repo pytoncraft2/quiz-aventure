@@ -174,13 +174,13 @@ export default class Jeu extends Phaser.Scene {
 			runChildUpdate: true,
 			collideWorldBounds: true
 		})
-		this.creationJoueur('id', 'boy_atlas')
+		this.creationJoueur('boy_atlas', 'idle1', 'id')
 
 		this.editorCreate();
 	}
 
-	creationJoueur(ClientId: any, sprite: string, x = 287, y = 464) {
-		const joueur = this.add.existing(new Joueur(this, x, y, sprite, ClientId, "idle1", false))
+	creationJoueur(atlas: any, frame: string, ClientId: string, x = 287, y = 464) {
+		const joueur = this.add.existing(new Joueur(this, x, y, atlas, ClientId, frame, false))
 		joueur
 			.setScale(0.3)
 			.setDepth(1)

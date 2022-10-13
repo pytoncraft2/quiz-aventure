@@ -1,8 +1,14 @@
-export function __StatsSupplementaire(_fakhear: any, _Aptitudes: any) {}
+export function __StatsSupplementaire(_fakhear: any, _Aptitudes: any) {
+  console.log("STAT SUPLEMENTAIRE");
+}
 
-export function cross__A(_fakhear: Phaser.Physics.Arcade.Sprite|any, _input: any) {}
+export function cross__A(_fakhear: Phaser.Physics.Arcade.Sprite|any, _input: any) {
+  console.log("CROSS_A");
+}
 
-export function kick__Z(_fakhear: Phaser.Physics.Arcade.Sprite|any, _input: any) {}
+export function kick__Z(_fakhear: Phaser.Physics.Arcade.Sprite|any, _input: any) {
+  console.log("CROSS_Z");
+}
 
 export function dash__E(_fakhear: Phaser.Physics.Arcade.Sprite|any) {}
 

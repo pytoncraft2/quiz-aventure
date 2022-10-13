@@ -1,5 +1,5 @@
 import { AnimationJoueur } from "../animations/AnimationJoueur"
-import { Aptitudes } from "../aptitudes/base"
+import Aptitudes from "../aptitudes/base"
 import { DefautDirection } from "./initalisation/Defaut"
 
 /**
@@ -217,14 +217,18 @@ import { DefautDirection } from "./initalisation/Defaut"
    ) {
      super(scene, x, y, atlas, sprite)
 
-     this.init(scene, ClientID, sprite, auto)
+     this.init(scene, ClientID, sprite, atlas, auto)
    }
 
-   init(scene: Phaser.Scene, ClientID: string, sprite: string, _auto: boolean) {
+   init(scene: Phaser.Scene, ClientID: string, sprite: string, atlas: string, _auto: boolean) {
      this.scene = scene
      this.ClientID = ClientID
-     this.sprite = sprite
+     this.sprite = atlas
+     console.log("SPRITE:", atlas);
+     
     new(AnimationJoueur as any)(this.anims)
+    console.log(Aptitudes);
+    
     DefautDirection(Aptitudes, this)
 //      Aptitudes[this.sprite].StatsSupplementaire.call(self, self, Aptitudes)
 
