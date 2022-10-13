@@ -206,6 +206,10 @@ import { DefautDirection } from "./initalisation/Defaut"
  export default class PlayerClass extends Phaser.Physics.Arcade.Sprite {
    ClientID: any
    sprite?: string
+   currentTarget!: this
+   keyboard!: Phaser.Input.Keyboard.Key
+   commande: any
+   vel!: 10
    constructor(
      scene: Phaser.Scene,
      x: number,
@@ -224,22 +228,39 @@ import { DefautDirection } from "./initalisation/Defaut"
      this.scene = scene
      this.ClientID = ClientID
      this.sprite = atlas
-     console.log("SPRITE:", atlas);
+     this.currentTarget = this
      
     new(AnimationJoueur as any)(this.anims)
     console.log(Aptitudes);
+    const self = this;
     
-    DefautDirection(Aptitudes, this)
-//      Aptitudes[this.sprite].StatsSupplementaire.call(self, self, Aptitudes)
+    DefautDirection(Aptitudes, this);
+     (Aptitudes as any)[this.sprite].StatsSupplementaire.call(self, self, Aptitudes)
 
-     //initialisation de l'etat du joueur
-    //  const self = this;
-    //  DefautDirection(Aptitudes, this)
-    //  Aptitudes[this.sprite].StatsSupplementaire.call(self, self, Aptitudes)
+     //@ts-ignore
+    this.commande = this.scene.input.keyboard.createCursorKeys();
 
    }
    preUpdate(time: number, delta: number) {
      super.preUpdate(time, delta);
+     
+    //    if (this.commande.left.isDown) (Aptitudes as any)[(this as any).currentTarget.sprite].toucheGauche(this.currentTarget, this.commande);
+    //    if (this.commande.right.isDown) (Aptitudes as any)[(this as any).currentTarget.sprite].toucheDroite(this.currentTarget, this.commande);
+
+       if (this.commande.left.isDown) {
+           this.setVelocityX(-160);
+
+           this.anims.play('marche', true);
+       }
+       else if (this.commande.right.isDown) {
+           this.setVelocityX(160);
+
+           this.anims.play('marche', true);
+       }
+       else {
+           this.setVelocityX(0);
+           this.anims.play('inactif', true);
+       }
 
    }
 

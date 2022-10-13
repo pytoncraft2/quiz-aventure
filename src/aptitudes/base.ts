@@ -38,23 +38,15 @@ export interface Touches {
 const Aptitudes: Touches = {};
 
 Aptitudes['boy_atlas'] = {
-    "A": (_params: Phaser.Physics.Arcade.Sprite) => {
+    StatsSupplementaire: (_joueur: TJoueur, _Aptitudes: Touches) => {},
+    A: (_params: Phaser.Physics.Arcade.Sprite) => {
         console.log("touche A appuié");
     },
-    "toucheGauche": (joueur: TJoueur, input: any) => {
-    },
-    "toucheDroite": (joueur: TJoueur, input: any) => {
-
-    },
-    "toucheHaut": (joueur: TJoueur, input: any) => {
-
-    },
-    "toucheBas": (joueur: TJoueur, input: any) => {
-
-    },
-    "toucheEspace": (joueur: TJoueur, input: any) => {
-
-    },
+    toucheGauche: (_joueur: TJoueur, _input: any) => {},
+    toucheDroite: (_joueur: TJoueur, _input: any) => {},
+    toucheHaut: (_joueur: TJoueur, _input: any) => {},
+    toucheBas: (_joueur: TJoueur, _input: any) => {},
+    toucheEspace: (_joueur: TJoueur, _input: any) => {},
 }
 
 export default Aptitudes;

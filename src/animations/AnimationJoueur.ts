@@ -2,6 +2,12 @@ export function AnimationJoueur(anim: Phaser.Animations.AnimationState){
   anim.create({
     key: 'marche',
     frames: anim.generateFrameNames('boy_atlas', { prefix: 'walk', start: 1, end: 15 }),
+    frameRate: 22,
+    repeat: 0
+  });
+  anim.create({
+    key: 'inactif',
+    frames: anim.generateFrameNames('boy_atlas', { prefix: 'idle', start: 1, end: 15 }),
     frameRate: 15,
     repeat: 0
   });
