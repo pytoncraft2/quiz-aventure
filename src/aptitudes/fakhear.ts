@@ -1,9 +1,9 @@
-export function __StatsSupplementaire(fakhear: any, _Aptitudes: any) {}
+export function __StatsSupplementaire(_fakhear: any, _Aptitudes: any) {}
 
-export function cross__A(fakhear: Phaser.Physics.Arcade.Sprite|any, input: any) {}
+export function cross__A(_fakhear: Phaser.Physics.Arcade.Sprite|any, _input: any) {}
 
-export function kick__Z(fakhear: Phaser.Physics.Arcade.Sprite|any, input: any) {}
+export function kick__Z(_fakhear: Phaser.Physics.Arcade.Sprite|any, _input: any) {}
 
-export function dash__E(fakhear: Phaser.Physics.Arcade.Sprite|any) {}
+export function dash__E(_fakhear: Phaser.Physics.Arcade.Sprite|any) {}
 
-export function fusion__TAB(personnage: any, input: any) {}
+export function fusion__TAB(_personnage: any, _input: any) {}

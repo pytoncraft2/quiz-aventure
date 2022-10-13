@@ -220,11 +220,13 @@ import { DefautDirection } from "./initalisation/Defaut"
      this.init(scene, ClientID, sprite, auto)
    }
 
-   init(scene: Phaser.Scene, ClientID: string, sprite: string, auto: boolean) {
+   init(scene: Phaser.Scene, ClientID: string, sprite: string, _auto: boolean) {
      this.scene = scene
      this.ClientID = ClientID
      this.sprite = sprite
     new(AnimationJoueur as any)(this.anims)
+    DefautDirection(Aptitudes, this)
+//      Aptitudes[this.sprite].StatsSupplementaire.call(self, self, Aptitudes)
 
      //initialisation de l'etat du joueur
     //  const self = this;

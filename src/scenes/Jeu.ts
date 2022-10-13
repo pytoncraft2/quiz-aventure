@@ -6,7 +6,6 @@
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import Joueur from "../class/Joueur"
-import { AnimationJoueur } from "../animations/AnimationJoueur";
 /* END-USER-IMPORTS */
 
 export default class Jeu extends Phaser.Scene {
@@ -190,7 +189,7 @@ export default class Jeu extends Phaser.Scene {
 		// return this.getPresence()
 	}
 
-	suppressionJoueur(ClientId: any) {
+	suppressionJoueur(_ClientId: any) {
 		// this.playersRef[ClientId].destroy(true)
 		// delete this.playersRef[ClientId]
 		// return this.getPresence()
