@@ -176,6 +176,10 @@ export default class Jeu extends Phaser.Scene {
 		})
 		this.creationJoueur('boy_atlas', 'idle1', 'id')
 
+		this.time.delayedCall(1000, () => {
+			this.creationJoueur('girl_atlas', 'idle1', 'id2')
+		})
+
 		this.editorCreate();
 	}
 

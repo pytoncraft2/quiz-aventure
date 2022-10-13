@@ -209,7 +209,7 @@ import { DefautDirection } from "./initalisation/Defaut"
    currentTarget!: this
    keyboard!: Phaser.Input.Keyboard.Key
    commande: any
-   vel!: 10
+   vel: integer = 160
    constructor(
      scene: Phaser.Scene,
      x: number,
@@ -244,24 +244,19 @@ import { DefautDirection } from "./initalisation/Defaut"
    preUpdate(time: number, delta: number) {
      super.preUpdate(time, delta);
      
-    //    if (this.commande.left.isDown) (Aptitudes as any)[(this as any).currentTarget.sprite].toucheGauche(this.currentTarget, this.commande);
-    //    if (this.commande.right.isDown) (Aptitudes as any)[(this as any).currentTarget.sprite].toucheDroite(this.currentTarget, this.commande);
-
        if (this.commande.left.isDown) {
-           this.setVelocityX(-160);
+           this.setVelocityX(-this.vel);
 
-           this.anims.play('marche', true);
+           this.anims.play(`deplacement_${this.sprite}`, true);
        }
        else if (this.commande.right.isDown) {
-           this.setVelocityX(160);
+           this.setVelocityX(this.vel);
 
-           this.anims.play('marche', true);
+           this.anims.play(`deplacement_${this.sprite}`, true);
        }
        else {
            this.setVelocityX(0);
-           this.anims.play('inactif', true);
+           this.anims.play(`inactif_${this.sprite}`, true);
        }
-
    }
-
  }

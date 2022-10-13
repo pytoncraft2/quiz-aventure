@@ -1,34 +1,28 @@
 export function AnimationJoueur(anim: Phaser.Animations.AnimationState){
   anim.create({
-    key: 'marche',
+    key: 'deplacement_boy_atlas',
     frames: anim.generateFrameNames('boy_atlas', { prefix: 'walk', start: 1, end: 15 }),
     frameRate: 22,
     repeat: 0
   });
   anim.create({
-    key: 'inactif',
+    key: 'inactif_boy_atlas',
     frames: anim.generateFrameNames('boy_atlas', { prefix: 'idle', start: 1, end: 15 }),
     frameRate: 15,
     repeat: 0
   });
-}
 
-export function AnimationBombe(anim: Phaser.Animations.AnimationState){
-  anim.create({
-    key: 'akhizonah_bombe',
-    frames: anim.generateFrameNames('atlas', { prefix: 'bombe', start: 0, end: 8 }),
-    frameRate: 13,
-    repeat: 0,
-    delay: 1500
+    anim.create({
+    key: 'deplacement_girl_atlas',
+    frames: anim.generateFrameNames('girl_atlas', { prefix: 'run', start: 1, end: 8 }),
+    frameRate: 22,
+    repeat: 0
   });
-}
-
-export function AnimationOie(anim: Phaser.Animations.AnimationState) {
   anim.create({
-    key: 'oie_tire',
-    frames: anim.generateFrameNames('atlas', { prefix: 'attack', start: 0, end: 13 }),
-    frameRate: 20,
-    repeat: -1
+    key: 'inactif_girl_atlas',
+    frames: anim.generateFrameNames('girl_atlas', { prefix: 'idle', start: 1, end: 10 }),
+    frameRate: 15,
+    repeat: 0
   });
 }
 

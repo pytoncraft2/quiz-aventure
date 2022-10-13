@@ -4,38 +4,30 @@ export const DefautStats = (personnage?: any) => {
 }
 
 export const DefautDirection = (Aptitudes: any, personnage: any) => {
+
+      //  if (personnage.commande.left.isDown) {
+          //  personnage && personnage.setVelocityX(-160);
+          //  personnage.anims.play('marche', true);
+      //  }
+      //  else if (personnage.commande.right.isDown) {
+          //  personnage && personnage.setVelocityX(160);
+          //  personnage.anims.play('marche', true);
+      //  }
+      //  else {
+          //  personnage.setVelocityX(0);
+          //  personnage.anims.play('inactif', true);
+      //  }
+
   Aptitudes[personnage.sprite].toucheDroite = (personnage: any, input: any) => {
     personnage.body.setVelocityX(190)
   }
-  Aptitudes[personnage.sprite].toucheGauche = (personnage: any, input: any) => {
-    personnage.body.setVelocityX(-190)
-  }
-  Aptitudes[personnage.sprite].toucheEspace = (personnage: Phaser.Physics.Arcade.Sprite, _input: any) => {
-  }
-  Aptitudes[personnage.sprite].toucheHaut = (personnage: any, input: any) => {
-  }
-  Aptitudes[personnage.sprite].toucheBas = (personnage: any, input: any) => {
-  }
-}
-
-function direction(debut: boolean, fin: boolean, personnage: any, _input: any, dir: boolean) {
-  // if (debut) {
-  //   personnage.setFlipX(!dir)
-  //   personnage.play('walk', true)
+  // Aptitudes[personnage.sprite].toucheGauche = (personnage: any, input: any) => {
+  //   personnage.body.setVelocityX(-190)
   // }
-  // else if (fin) {
-  //   personnage.setVelocityX(0)
-  //   personnage.play('idle_walk', true)
+  // Aptitudes[personnage.sprite].toucheEspace = (personnage: Phaser.Physics.Arcade.Sprite, _input: any) => {
   // }
-  // else personnage.setVelocityX(dir ? (personnage as any).vel : -(personnage as any).vel)
-  console.log("DIRECTION");
-  
-}
-
-function changementEtage(personnage: any, velocite: any, delai: any){
-    personnage.body.checkCollision.none = true;
-    personnage.setVelocityY(velocite);
-    personnage.scene.time.delayedCall(delai, () => {
-      personnage.body.checkCollision.none = false;
-    }, null, personnage);
+  // Aptitudes[personnage.sprite].toucheHaut = (personnage: any, input: any) => {
+  // }
+  // Aptitudes[personnage.sprite].toucheBas = (personnage: any, input: any) => {
+  // }
 }

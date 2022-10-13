@@ -11,6 +11,12 @@
                 "url": "assets/FufuSuperDino.png",
                 "type": "image",
                 "key": "FufuSuperDino"
+            },
+            {
+                "atlasURL": "assets/girl_atlas.json",
+                "textureURL": "assets/girl_atlas.png",
+                "type": "atlas",
+                "key": "girl_atlas"
             }
         ]
     },
