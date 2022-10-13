@@ -28,6 +28,13 @@ const game = new Phaser.Game({
         mode: Phaser.Scale.ScaleModes.FIT,
         autoCenter: Phaser.Scale.Center.CENTER_BOTH
     },
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 10 },
+            debug: false
+        }
+    },
     scene: [Boot, Preload, Level, Jeu]
 });
 

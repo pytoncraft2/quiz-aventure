@@ -224,9 +224,9 @@ import { DefautDirection } from "./initalisation/Defaut"
      this.scene = scene
      this.ClientID = ClientID
      this.sprite = sprite
+    new(AnimationJoueur as any)(this.anims)
 
      //initialisation de l'etat du joueur
-    //  new AnimationJoueur(this.anims)
     //  const self = this;
     //  DefautDirection(Aptitudes, this)
     //  Aptitudes[this.sprite].StatsSupplementaire.call(self, self, Aptitudes)

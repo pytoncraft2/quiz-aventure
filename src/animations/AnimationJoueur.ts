@@ -1,7 +1,7 @@
 export function AnimationJoueur(anim: Phaser.Animations.AnimationState){
   anim.create({
-    key: 'attack',
-    frames: anim.generateFrameNames('atlas', { prefix: 'positiona', start: 0, end: 5 }),
+    key: 'marche',
+    frames: anim.generateFrameNames('boy_atlas', { prefix: 'walk', start: 1, end: 15 }),
     frameRate: 15,
     repeat: 0
   });
