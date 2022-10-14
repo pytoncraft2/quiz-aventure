@@ -41,6 +41,8 @@ import { DefautDirection } from "./initalisation/Defaut"
    }
    preUpdate(time: number, delta: number) {
      super.preUpdate(time, delta);
-     (Aptitudes as any)[(this as any).sprite].deplacement(this, {})
+     (Aptitudes as any)[(this as any).sprite].deplacement(this, {});
+     (this.scene as any).ombre.y = this.getBottomCenter().y - 19;
+     (this.scene as any).ombre.x = this.getLeftCenter().x + 41;
    }
  }
