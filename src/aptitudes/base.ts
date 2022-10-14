@@ -18,6 +18,7 @@ export interface Touches {
         toucheHaut?: (joueur: TJoueur, input: any) => void;
         toucheBas?: (joueur: TJoueur, input: any) => void;
         toucheEspace?: (joueur: TJoueur, input: any) => void;
+        deplacement?: (joueur: TJoueur, input: any) => void;
         auto?(joueur: TJoueur, input: any, Aptitudes?: any): void;
     }
 }
@@ -32,6 +33,7 @@ Aptitudes['boy_atlas'] = {
     toucheHaut: (_joueur: TJoueur, _input: any) => {},
     toucheBas: (_joueur: TJoueur, _input: any) => {},
     toucheEspace: (_joueur: TJoueur, _input: any) => {},
+    deplacement: (_joueur: TJoueur, _input: any) => {}
 }
 
 Aptitudes['girl_atlas'] = {
@@ -42,6 +44,7 @@ Aptitudes['girl_atlas'] = {
     toucheHaut: (_joueur: TJoueur, _input: any) => {},
     toucheBas: (_joueur: TJoueur, _input: any) => {},
     toucheEspace: (_joueur: TJoueur, _input: any) => {},
+    deplacement: (_joueur: TJoueur, _input: any) => {}
 }
 
 export default Aptitudes;

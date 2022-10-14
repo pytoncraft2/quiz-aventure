@@ -179,7 +179,6 @@ export default class Jeu extends Phaser.Scene {
 		this.time.delayedCall(1000, () => {
 			this.creationJoueur('girl_atlas', 'idle1', 'id2')
 		})
-
 		this.editorCreate();
 	}
 
@@ -188,16 +187,16 @@ export default class Jeu extends Phaser.Scene {
 		joueur
 			.setScale(0.3)
 			.setDepth(1)
+			.setData({ClientId})
 			this.joueurs.add(joueur)
-			// this.playersRef[ClientId] = player
-		// return this.getPresence()
 	}
 
 	suppressionJoueur(_ClientId: any) {
-		// this.playersRef[ClientId].destroy(true)
-		// delete this.playersRef[ClientId]
-		// return this.getPresence()
+		this.joueurs.getMatching('ClientID',_ClientId)[0]?.destroy();
 	}
+
+
+	update(_time: number, _delta: number): void {}
 
 	/* END-USER-CODE */
 }
