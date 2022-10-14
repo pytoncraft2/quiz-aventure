@@ -28,9 +28,10 @@ export default class Jeu extends Phaser.Scene {
 		rectangle_1.fillColor = 3171472;
 
 		// rectangle
-		const rectangle = this.add.rectangle(1209, 165, 128, 128);
+		const rectangle = this.add.rectangle(1209, 138, 128, 128);
 		rectangle.scaleX = 18.88366025235117;
 		rectangle.scaleY = 2.521640189639836;
+		rectangle.visible = false;
 		rectangle.isFilled = true;
 		rectangle.fillColor = 8046835;
 
@@ -228,10 +229,199 @@ export default class Jeu extends Phaser.Scene {
 		ellipse_10.fillColor = 1232190;
 		arbre.add(ellipse_10);
 
+		// etoiles
+		const etoiles = this.add.container(14, -11);
+		etoiles.scaleX = 1.0811049870870222;
+		etoiles.scaleY = 0.9597097072512011;
+		etoiles.visible = false;
+
+		// ellipse_15
+		const ellipse_15 = this.add.ellipse(255.15234375, 99.5490550994873, 128, 128);
+		ellipse_15.scaleX = 0.02783652503959405;
+		ellipse_15.scaleY = 0.02783652503959405;
+		ellipse_15.isFilled = true;
+		etoiles.add(ellipse_15);
+
+		// ellipse_16
+		const ellipse_16 = this.add.ellipse(268.649658203125, 102.83996391296387, 128, 128);
+		ellipse_16.scaleX = 0.02783652503959405;
+		ellipse_16.scaleY = 0.02783652503959405;
+		ellipse_16.isFilled = true;
+		etoiles.add(ellipse_16);
+
+		// ellipse_17
+		const ellipse_17 = this.add.ellipse(204.652099609375, 106.79229545593262, 128, 128);
+		ellipse_17.scaleX = 0.02783652503959405;
+		ellipse_17.scaleY = 0.02783652503959405;
+		ellipse_17.isFilled = true;
+		etoiles.add(ellipse_17);
+
+		// ellipse_18
+		const ellipse_18 = this.add.ellipse(205.8681640625, 84.44635581970215, 128, 128);
+		ellipse_18.scaleX = 0.02783652503959405;
+		ellipse_18.scaleY = 0.02783652503959405;
+		ellipse_18.isFilled = true;
+		etoiles.add(ellipse_18);
+
+		// ellipse_19
+		const ellipse_19 = this.add.ellipse(295.099853515625, 82.77420616149902, 128, 128);
+		ellipse_19.scaleX = 0.02783652503959405;
+		ellipse_19.scaleY = 0.02783652503959405;
+		ellipse_19.isFilled = true;
+		etoiles.add(ellipse_19);
+
+		// ellipse_20
+		const ellipse_20 = this.add.ellipse(238.955078125, 52.58556938171387, 128, 128);
+		ellipse_20.scaleX = 0.02783652503959405;
+		ellipse_20.scaleY = 0.02783652503959405;
+		ellipse_20.isFilled = true;
+		etoiles.add(ellipse_20);
+
+		// ellipse_21
+		const ellipse_21 = this.add.ellipse(193.329345703125, 47.172353744506836, 128, 128);
+		ellipse_21.scaleX = 0.02783652503959405;
+		ellipse_21.scaleY = 0.02783652503959405;
+		ellipse_21.isFilled = true;
+		etoiles.add(ellipse_21);
+
+		// ellipse_22
+		const ellipse_22 = this.add.ellipse(150.796875, 61.09206199645996, 128, 128);
+		ellipse_22.scaleX = 0.02783652503959405;
+		ellipse_22.scaleY = 0.02783652503959405;
+		ellipse_22.isFilled = true;
+		etoiles.add(ellipse_22);
+
+		// ellipse_23
+		const ellipse_23 = this.add.ellipse(97.43798828125, 66.50527763366699, 128, 128);
+		ellipse_23.scaleX = 0.02783652503959405;
+		ellipse_23.scaleY = 0.02783652503959405;
+		ellipse_23.isFilled = true;
+		etoiles.add(ellipse_23);
+
+		// ellipse_24
+		const ellipse_24 = this.add.ellipse(66.50537109375, 0.7733173370361328, 128, 128);
+		ellipse_24.scaleX = 0.02783652503959405;
+		ellipse_24.scaleY = 0.02783652503959405;
+		ellipse_24.isFilled = true;
+		etoiles.add(ellipse_24);
+
+		// ellipse_25
+		const ellipse_25 = this.add.ellipse(163.169921875, 23.19951820373535, 128, 128);
+		ellipse_25.scaleX = 0.02783652503959405;
+		ellipse_25.scaleY = 0.02783652503959405;
+		ellipse_25.isFilled = true;
+		etoiles.add(ellipse_25);
+
+		// ellipse_26
+		const ellipse_26 = this.add.ellipse(34.79931640625, 108.26441764831543, 128, 128);
+		ellipse_26.scaleX = 0.02783652503959405;
+		ellipse_26.scaleY = 0.02783652503959405;
+		ellipse_26.isFilled = true;
+		etoiles.add(ellipse_26);
+
+		// ellipse_27
+		const ellipse_27 = this.add.ellipse(180.182861328125, 127.59733390808105, 128, 128);
+		ellipse_27.scaleX = 0.02783652503959405;
+		ellipse_27.scaleY = 0.02783652503959405;
+		ellipse_27.isFilled = true;
+		etoiles.add(ellipse_27);
+
+		// ellipse_28
+		const ellipse_28 = this.add.ellipse(136.877197265625, 95.89133262634277, 128, 128);
+		ellipse_28.scaleX = 0.02783652503959405;
+		ellipse_28.scaleY = 0.02783652503959405;
+		ellipse_28.isFilled = true;
+		etoiles.add(ellipse_28);
+
+		// ellipse_29
+		const ellipse_29 = this.add.ellipse(0, 26.292787551879883, 128, 128);
+		ellipse_29.scaleX = 0.02783652503959405;
+		ellipse_29.scaleY = 0.02783652503959405;
+		ellipse_29.isFilled = true;
+		etoiles.add(ellipse_29);
+
+		// ellipse_30
+		const ellipse_30 = this.add.ellipse(325.56640625, 0, 128, 128);
+		ellipse_30.scaleX = 0.02783652503959405;
+		ellipse_30.scaleY = 0.02783652503959405;
+		ellipse_30.isFilled = true;
+		etoiles.add(ellipse_30);
+
+		// ellipse_31
+		const ellipse_31 = this.add.ellipse(497.242919921875, 40.98581504821777, 128, 128);
+		ellipse_31.scaleX = 0.02783652503959405;
+		ellipse_31.scaleY = 0.02783652503959405;
+		ellipse_31.isFilled = true;
+		etoiles.add(ellipse_31);
+
+		// ellipse_32
+		const ellipse_32 = this.add.ellipse(462.443603515625, 102.85119438171387, 128, 128);
+		ellipse_32.scaleX = 0.02783652503959405;
+		ellipse_32.scaleY = 0.02783652503959405;
+		ellipse_32.isFilled = true;
+		etoiles.add(ellipse_32);
+
+		// ellipse_33
+		const ellipse_33 = this.add.ellipse(348.76611328125, 118.31753349304199, 128, 128);
+		ellipse_33.scaleX = 0.02783652503959405;
+		ellipse_33.scaleY = 0.02783652503959405;
+		ellipse_33.isFilled = true;
+		etoiles.add(ellipse_33);
+
+		// ellipse_34
+		const ellipse_34 = this.add.ellipse(398.25830078125, 47.172353744506836, 128, 128);
+		ellipse_34.scaleX = 0.02783652503959405;
+		ellipse_34.scaleY = 0.02783652503959405;
+		ellipse_34.isFilled = true;
+		etoiles.add(ellipse_34);
+
+		// ellipse_35
+		const ellipse_35 = this.add.ellipse(522.762451171875, 19.332929611206055, 128, 128);
+		ellipse_35.scaleX = 0.02783652503959405;
+		ellipse_35.scaleY = 0.02783652503959405;
+		ellipse_35.isFilled = true;
+		etoiles.add(ellipse_35);
+
+		// ellipse_36
+		const ellipse_36 = this.add.ellipse(602.4140625, 136.10383415222168, 128, 128);
+		ellipse_36.scaleX = 0.02783652503959405;
+		ellipse_36.scaleY = 0.02783652503959405;
+		ellipse_36.isFilled = true;
+		etoiles.add(ellipse_36);
+
+		// ellipse_37
+		const ellipse_37 = this.add.ellipse(400.578369140625, 159.30334281921387, 128, 128);
+		ellipse_37.scaleX = 0.02783652503959405;
+		ellipse_37.scaleY = 0.02783652503959405;
+		ellipse_37.isFilled = true;
+		etoiles.add(ellipse_37);
+
+		// ellipse_38
+		const ellipse_38 = this.add.ellipse(328.65966796875, 160.0235424041748, 128, 128);
+		ellipse_38.scaleX = 0.02783652503959405;
+		ellipse_38.scaleY = 0.02783652503959405;
+		ellipse_38.isFilled = true;
+		etoiles.add(ellipse_38);
+
+		// ellipse_39
+		const ellipse_39 = this.add.ellipse(417.59130859375, 81.14518547058105, 128, 128);
+		ellipse_39.scaleX = 0.02783652503959405;
+		ellipse_39.scaleY = 0.02783652503959405;
+		ellipse_39.isFilled = true;
+		etoiles.add(ellipse_39);
+
+		// ellipse_40
+		const ellipse_40 = this.add.ellipse(281.487548828125, 34.852399826049805, 128, 128);
+		ellipse_40.scaleX = 0.02783652503959405;
+		ellipse_40.scaleY = 0.02783652503959405;
+		ellipse_40.isFilled = true;
+		etoiles.add(ellipse_40);
+
 		this.nuage_premier_plan = nuage_premier_plan;
 		this.ombre = ombre;
 		this.montagnes = montagnes;
 		this.nuages = nuages;
+		this.etoiles = etoiles;
 
 		this.events.emit("scene-awake");
 	}
@@ -240,6 +430,7 @@ export default class Jeu extends Phaser.Scene {
 	public ombre!: Phaser.GameObjects.Ellipse;
 	public montagnes!: Phaser.GameObjects.Container;
 	public nuages!: Phaser.GameObjects.Container;
+	public etoiles!: Phaser.GameObjects.Container;
 
 	/* START-USER-CODE */
 	joueurs!: Phaser.GameObjects.Group
@@ -251,6 +442,7 @@ export default class Jeu extends Phaser.Scene {
 		this.montagnes.setScrollFactor(0.3)
 		this.nuages.setScrollFactor(0.4)
 		this.nuage_premier_plan.setScrollFactor(0.2)
+		this.etoiles.setScrollFactor(0)
 
 		this.joueurs = this.physics.add.group({
 			runChildUpdate: true,
