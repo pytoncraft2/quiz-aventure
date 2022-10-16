@@ -25,7 +25,7 @@ export default class Jeu extends Phaser.Scene {
 		rectangle_1.scaleX = 18.88366025235117;
 		rectangle_1.scaleY = 1.315980682445885;
 		rectangle_1.isFilled = true;
-		rectangle_1.fillColor = 9721365;
+		rectangle_1.fillColor = 7247402;
 
 		// rectangle
 		const rectangle = this.add.rectangle(1209, 138, 128, 128);
