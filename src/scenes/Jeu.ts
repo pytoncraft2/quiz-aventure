@@ -420,11 +420,62 @@ export default class Jeu extends Phaser.Scene {
 		ellipse_40.isFilled = true;
 		etoiles.add(ellipse_40);
 
+		// ombre_1
+		const ombre_1 = this.add.ellipse(1096, 523, 128, 128);
+		ombre_1.scaleX = 1.0473994709996521;
+		ombre_1.scaleY = 0.25948884278005596;
+		ombre_1.isFilled = true;
+		ombre_1.fillColor = 0;
+		ombre_1.fillAlpha = 0.3;
+
+		// text_1
+		const text_1 = this.add.text(1095, 363, "", {});
+		text_1.scaleX = 2.876392581006588;
+		text_1.scaleY = 2.876392581006588;
+		text_1.setOrigin(0.5, 0.5);
+		text_1.text = "?";
+
+		// ombre_4
+		const ombre_4 = this.add.ellipse(1097, 238, 128, 128);
+		ombre_4.scaleX = 0.6397543756652657;
+		ombre_4.scaleY = 0.6397543756652657;
+		ombre_4.setOrigin(0.5, 0);
+		ombre_4.isFilled = true;
+		ombre_4.fillColor = 0;
+		ombre_4.fillAlpha = 0.3;
+
+		// text_2
+		const text_2 = this.add.text(1108, 205, "", {});
+		text_2.setOrigin(0.5, 0);
+		text_2.text = "Quelle est la capitale de Paris ?";
+
+		// ombre_2
+		const ombre_2 = this.add.ellipse(1194, 238, 128, 128);
+		ombre_2.scaleX = 0.6397543756652657;
+		ombre_2.scaleY = 0.6397543756652657;
+		ombre_2.setOrigin(0.5, 0);
+		ombre_2.isFilled = true;
+		ombre_2.fillColor = 0;
+		ombre_2.fillAlpha = 0.3;
+
+		// ombre_3
+		const ombre_3 = this.add.ellipse(1000, 238, 128, 128);
+		ombre_3.scaleX = 0.6397543756652657;
+		ombre_3.scaleY = 0.6397543756652657;
+		ombre_3.setOrigin(0.5, 0);
+		ombre_3.isFilled = true;
+		ombre_3.fillColor = 0;
+		ombre_3.fillAlpha = 0.3;
+
 		this.nuage_premier_plan = nuage_premier_plan;
 		this.ombre = ombre;
 		this.montagnes = montagnes;
 		this.nuages = nuages;
 		this.etoiles = etoiles;
+		this.ombre_1 = ombre_1;
+		this.ombre_4 = ombre_4;
+		this.ombre_2 = ombre_2;
+		this.ombre_3 = ombre_3;
 
 		this.events.emit("scene-awake");
 	}
@@ -434,6 +485,10 @@ export default class Jeu extends Phaser.Scene {
 	public montagnes!: Phaser.GameObjects.Container;
 	public nuages!: Phaser.GameObjects.Container;
 	public etoiles!: Phaser.GameObjects.Container;
+	public ombre_1!: Phaser.GameObjects.Ellipse;
+	public ombre_4!: Phaser.GameObjects.Ellipse;
+	public ombre_2!: Phaser.GameObjects.Ellipse;
+	public ombre_3!: Phaser.GameObjects.Ellipse;
 
 	/* START-USER-CODE */
 	joueurs!: Phaser.GameObjects.Group
