@@ -19,8 +19,9 @@
             "y": 519,
             "scaleX": 18.88366025235117,
             "scaleY": 1.315980682445885,
+            "visible": false,
             "isFilled": true,
-            "fillColor": "#6e962a",
+            "fillColor": "#5e8a12",
             "width": 128,
             "height": 128
         },

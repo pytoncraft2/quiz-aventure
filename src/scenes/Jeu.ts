@@ -24,8 +24,9 @@ export default class Jeu extends Phaser.Scene {
 		const rectangle_1 = this.add.rectangle(1210, 519, 128, 128);
 		rectangle_1.scaleX = 18.88366025235117;
 		rectangle_1.scaleY = 1.315980682445885;
+		rectangle_1.visible = false;
 		rectangle_1.isFilled = true;
-		rectangle_1.fillColor = 7247402;
+		rectangle_1.fillColor = 6195730;
 
 		// rectangle
 		const rectangle = this.add.rectangle(1209, 138, 128, 128);
@@ -437,6 +438,7 @@ export default class Jeu extends Phaser.Scene {
 	/* START-USER-CODE */
 	joueurs!: Phaser.GameObjects.Group
 	ciel!: Phaser.GameObjects.Graphics
+	sol!: Phaser.GameObjects.Graphics
 
 	// Write your code here
 
@@ -474,6 +476,11 @@ export default class Jeu extends Phaser.Scene {
 		this.ciel.fillGradientStyle(0x31a5e6, 0x31a5e6, 0x075986, 0x075986, 1);
 		this.ciel.fillRect(0, 0, totalWidth, height - 140);
 		this.ciel.setDepth(-1)
+
+		this.sol = this.add.graphics();
+		this.sol.fillGradientStyle(0x29570a, 0x5e8a12, 0x5e8a12, 0x000000, 1);
+		this.sol.fillRect(0, 420, totalWidth, 200);
+		this.sol.setDepth(-1)
 
 	}
 
