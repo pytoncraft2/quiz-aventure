@@ -25,7 +25,7 @@ export default class Jeu extends Phaser.Scene {
 		rectangle_1.scaleX = 18.88366025235117;
 		rectangle_1.scaleY = 1.315980682445885;
 		rectangle_1.isFilled = true;
-		rectangle_1.fillColor = 5191691;
+		rectangle_1.fillColor = 5913344;
 
 		// rectangle
 		const rectangle = this.add.rectangle(1209, 138, 128, 128);
@@ -183,6 +183,8 @@ export default class Jeu extends Phaser.Scene {
 		rectangle_2.scaleY = 0.8446000867118206;
 		rectangle_2.isFilled = true;
 		rectangle_2.fillColor = 6306819;
+		rectangle_2.isStroked = true;
+		rectangle_2.lineWidth = 3;
 		arbre.add(rectangle_2);
 
 		// ellipse_8
