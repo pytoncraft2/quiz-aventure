@@ -25,7 +25,7 @@ export default class Jeu extends Phaser.Scene {
 		rectangle_1.scaleX = 18.88366025235117;
 		rectangle_1.scaleY = 1.315980682445885;
 		rectangle_1.isFilled = true;
-		rectangle_1.fillColor = 3171472;
+		rectangle_1.fillColor = 5191691;
 
 		// rectangle
 		const rectangle = this.add.rectangle(1209, 138, 128, 128);
@@ -434,11 +434,15 @@ export default class Jeu extends Phaser.Scene {
 
 	/* START-USER-CODE */
 	joueurs!: Phaser.GameObjects.Group
+	ciel!: Phaser.GameObjects.Graphics
 
 	// Write your code here
 
 	create() {
 		this.editorCreate();
+		const width = this.scale.width
+		const height = this.scale.height
+
 		this.montagnes.setScrollFactor(0.3)
 		this.nuages.setScrollFactor(0.4)
 		this.nuage_premier_plan.setScrollFactor(0.2)
@@ -448,6 +452,8 @@ export default class Jeu extends Phaser.Scene {
 			duration: 30000,
 			repeat: -1
 		})
+
+
 		this.etoiles.setScrollFactor(0)
 
 		this.joueurs = this.physics.add.group({
@@ -455,8 +461,6 @@ export default class Jeu extends Phaser.Scene {
 			collideWorldBounds: false
 		})
 
-		const width = this.scale.width
-		const height = this.scale.height
 
 		const totalWidth = width * 20
 
@@ -464,6 +468,10 @@ export default class Jeu extends Phaser.Scene {
 		const joueur = this.creationJoueur('boy_atlas', 'idle1', 'id')
 		this.cameras.main.setBounds(0, 0, width * 20, height)
 		this.cameras.main.startFollow(joueur, false, 1, 1, 0);
+		this.ciel = this.add.graphics();
+		this.ciel.fillGradientStyle(0x31a5e6, 0x31a5e6, 0x075986, 0x075986, 1);
+		this.ciel.fillRect(0, 0, totalWidth, height - 140);
+		this.ciel.setDepth(-1)
 
 	}
 
