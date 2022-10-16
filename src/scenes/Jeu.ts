@@ -436,9 +436,9 @@ export default class Jeu extends Phaser.Scene {
 		text_1.text = "?";
 
 		// ombre_4
-		const ombre_4 = this.add.ellipse(1097, 238, 128, 128);
-		ombre_4.scaleX = 0.6397543756652657;
-		ombre_4.scaleY = 0.6397543756652657;
+		const ombre_4 = this.add.ellipse(609, 181, 128, 128);
+		ombre_4.scaleX = 1.5211118867421027;
+		ombre_4.scaleY = 1.5211118867421027;
 		ombre_4.setOrigin(0.5, 0);
 		ombre_4.isFilled = true;
 		ombre_4.fillColor = 0;
@@ -450,22 +450,41 @@ export default class Jeu extends Phaser.Scene {
 		text_2.text = "Quelle est la capitale de Paris ?";
 
 		// ombre_2
-		const ombre_2 = this.add.ellipse(1194, 238, 128, 128);
-		ombre_2.scaleX = 0.6397543756652657;
-		ombre_2.scaleY = 0.6397543756652657;
+		const ombre_2 = this.add.ellipse(389, 181, 128, 128);
+		ombre_2.scaleX = 1.5211118867421027;
+		ombre_2.scaleY = 1.5211118867421027;
 		ombre_2.setOrigin(0.5, 0);
 		ombre_2.isFilled = true;
 		ombre_2.fillColor = 0;
 		ombre_2.fillAlpha = 0.3;
 
 		// ombre_3
-		const ombre_3 = this.add.ellipse(1000, 238, 128, 128);
-		ombre_3.scaleX = 0.6397543756652657;
-		ombre_3.scaleY = 0.6397543756652657;
+		const ombre_3 = this.add.ellipse(170, 181, 128, 128);
+		ombre_3.scaleX = 1.5211118867421027;
+		ombre_3.scaleY = 1.5211118867421027;
 		ombre_3.setOrigin(0.5, 0);
 		ombre_3.isFilled = true;
 		ombre_3.fillColor = 0;
 		ombre_3.fillAlpha = 0.3;
+
+		// question
+		const question = this.add.container(400, 61);
+
+		// rectangle_4
+		const rectangle_4 = this.add.rectangle(0, 0, 128, 128);
+		rectangle_4.scaleX = 6.232212622705353;
+		rectangle_4.scaleY = 0.9337083641231465;
+		rectangle_4.isFilled = true;
+		rectangle_4.fillColor = 0;
+		rectangle_4.fillAlpha = 0.8;
+		question.add(rectangle_4);
+
+		// text_3
+		const text_3 = this.add.text(0, 0, "", {});
+		text_3.setOrigin(0.5, 0.5);
+		text_3.text = "Quelle est la capitale de Paris ?";
+		text_3.setStyle({ "fontSize": "26px" });
+		question.add(text_3);
 
 		this.nuage_premier_plan = nuage_premier_plan;
 		this.ombre = ombre;
@@ -476,6 +495,7 @@ export default class Jeu extends Phaser.Scene {
 		this.ombre_4 = ombre_4;
 		this.ombre_2 = ombre_2;
 		this.ombre_3 = ombre_3;
+		this.question = question;
 
 		this.events.emit("scene-awake");
 	}
@@ -489,6 +509,7 @@ export default class Jeu extends Phaser.Scene {
 	public ombre_4!: Phaser.GameObjects.Ellipse;
 	public ombre_2!: Phaser.GameObjects.Ellipse;
 	public ombre_3!: Phaser.GameObjects.Ellipse;
+	public question!: Phaser.GameObjects.Container;
 
 	/* START-USER-CODE */
 	joueurs!: Phaser.GameObjects.Group
@@ -505,6 +526,7 @@ export default class Jeu extends Phaser.Scene {
 		this.montagnes.setScrollFactor(0.3)
 		this.nuages.setScrollFactor(0.4)
 		this.nuage_premier_plan.setScrollFactor(0.2)
+		this.question.setScrollFactor(0)
 		this.tweens.add({
 			targets: this.nuages,
 			x: "-=400",
