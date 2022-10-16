@@ -442,6 +442,12 @@ export default class Jeu extends Phaser.Scene {
 		this.montagnes.setScrollFactor(0.3)
 		this.nuages.setScrollFactor(0.4)
 		this.nuage_premier_plan.setScrollFactor(0.2)
+		this.tweens.add({
+			targets: this.nuages,
+			x: "-=400",
+			duration: 30000,
+			repeat: -1
+		})
 		this.etoiles.setScrollFactor(0)
 
 		this.joueurs = this.physics.add.group({
