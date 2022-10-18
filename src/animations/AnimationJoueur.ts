@@ -11,6 +11,12 @@ export function AnimationJoueur(anim: Phaser.Animations.AnimationState){
     frameRate: 15,
     repeat: 0
   });
+  anim.create({
+    key: 'saut_boy_atlas',
+    frames: anim.generateFrameNames('boy_atlas', { prefix: 'jump', start: 1, end: 15 }),
+    frameRate: 15,
+    repeat: 0
+  });
 
     anim.create({
     key: 'deplacement_girl_atlas',

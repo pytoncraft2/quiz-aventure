@@ -12,10 +12,14 @@ export const DefautDirection = (Aptitudes: any, personnage: any) => {
        else if (personnage.commande.right.isDown) {
            personnage && personnage.setVelocityX(180);
            personnage.anims.play(`deplacement_${personnage.sprite}`, true);
-       }
+       } else if (Phaser.Input.Keyboard.JustDown(personnage.commande.space)) {
+        personnage.setVelocityY(-500)
+        personnage.anims.play(`saut_${personnage.sprite}`)
+      }
+
        else {
-           personnage.setVelocityX(0);
-           personnage.anims.play(`inactif_${personnage.sprite}`, true);
+           personnage.body?.touching.down && (personnage.anims.play(`inactif_${personnage.sprite}`, true), personnage.setVelocityX(0))
        }
-  }
+
+        }
 }

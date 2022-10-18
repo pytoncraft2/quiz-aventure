@@ -6,6 +6,7 @@
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import Joueur from "../class/Joueur"
+import Boite from "../class/Boite"
 /* END-USER-IMPORTS */
 
 export default class Jeu extends Phaser.Scene {
@@ -435,40 +436,14 @@ export default class Jeu extends Phaser.Scene {
 		text_1.setOrigin(0.5, 0.5);
 		text_1.text = "?";
 
-		// ombre_4
-		const ombre_4 = this.add.ellipse(609, 181, 128, 128);
-		ombre_4.scaleX = 1.5211118867421027;
-		ombre_4.scaleY = 1.5211118867421027;
-		ombre_4.setOrigin(0.5, 0);
-		ombre_4.isFilled = true;
-		ombre_4.fillColor = 0;
-		ombre_4.fillAlpha = 0.3;
-
 		// text_2
 		const text_2 = this.add.text(1108, 205, "", {});
 		text_2.setOrigin(0.5, 0);
 		text_2.text = "Quelle est la capitale de Paris ?";
 
-		// ombre_2
-		const ombre_2 = this.add.ellipse(389, 181, 128, 128);
-		ombre_2.scaleX = 1.5211118867421027;
-		ombre_2.scaleY = 1.5211118867421027;
-		ombre_2.setOrigin(0.5, 0);
-		ombre_2.isFilled = true;
-		ombre_2.fillColor = 0;
-		ombre_2.fillAlpha = 0.3;
-
-		// ombre_3
-		const ombre_3 = this.add.ellipse(170, 181, 128, 128);
-		ombre_3.scaleX = 1.5211118867421027;
-		ombre_3.scaleY = 1.5211118867421027;
-		ombre_3.setOrigin(0.5, 0);
-		ombre_3.isFilled = true;
-		ombre_3.fillColor = 0;
-		ombre_3.fillAlpha = 0.3;
-
 		// question
 		const question = this.add.container(400, 61);
+		question.visible = false;
 
 		// rectangle_4
 		const rectangle_4 = this.add.rectangle(0, 0, 128, 128);
@@ -486,16 +461,49 @@ export default class Jeu extends Phaser.Scene {
 		text_3.setStyle({ "fontSize": "26px" });
 		question.add(text_3);
 
+		// platforme1
+		const platforme1 = this.add.rectangle(311, 563, 128, 128);
+		platforme1.scaleX = 4.743682149891982;
+		platforme1.scaleY = 0.5042393909820959;
+		platforme1.visible = false;
+		platforme1.isFilled = true;
+
+		// QuestionBoite
+		const questionBoite = this.add.layer();
+
+		// rectangle_6
+		const rectangle_6 = this.add.rectangle(449, 259, 128, 128);
+		rectangle_6.scaleX = 0.43013023026658265;
+		rectangle_6.scaleY = 0.43013023026658265;
+		rectangle_6.visible = false;
+		rectangle_6.isFilled = true;
+		questionBoite.add(rectangle_6);
+
+		// rectangle_5
+		const rectangle_5 = this.add.rectangle(449, 259, 128, 128);
+		rectangle_5.scaleX = 0.4110906677371514;
+		rectangle_5.scaleY = 0.4110906677371514;
+		rectangle_5.isFilled = true;
+		rectangle_5.fillColor = 612958;
+		questionBoite.add(rectangle_5);
+
+		// text_4
+		const text_4 = this.add.text(449, 260, "", {});
+		text_4.scaleX = 1.8887616340344677;
+		text_4.scaleY = 1.8887616340344677;
+		text_4.setOrigin(0.5, 0.5);
+		text_4.text = "?";
+		questionBoite.add(text_4);
+
 		this.nuage_premier_plan = nuage_premier_plan;
 		this.ombre = ombre;
 		this.montagnes = montagnes;
 		this.nuages = nuages;
 		this.etoiles = etoiles;
 		this.ombre_1 = ombre_1;
-		this.ombre_4 = ombre_4;
-		this.ombre_2 = ombre_2;
-		this.ombre_3 = ombre_3;
 		this.question = question;
+		this.platforme1 = platforme1;
+		this.questionBoite = questionBoite;
 
 		this.events.emit("scene-awake");
 	}
@@ -506,15 +514,15 @@ export default class Jeu extends Phaser.Scene {
 	public nuages!: Phaser.GameObjects.Container;
 	public etoiles!: Phaser.GameObjects.Container;
 	public ombre_1!: Phaser.GameObjects.Ellipse;
-	public ombre_4!: Phaser.GameObjects.Ellipse;
-	public ombre_2!: Phaser.GameObjects.Ellipse;
-	public ombre_3!: Phaser.GameObjects.Ellipse;
 	public question!: Phaser.GameObjects.Container;
+	public platforme1!: Phaser.GameObjects.Rectangle;
+	public questionBoite!: Phaser.GameObjects.Layer;
 
 	/* START-USER-CODE */
 	joueurs!: Phaser.GameObjects.Group
 	ciel!: Phaser.GameObjects.Graphics
 	sol!: Phaser.GameObjects.Graphics
+	boitesQuestion!: Phaser.GameObjects.Group
 
 	// Write your code here
 
@@ -542,6 +550,24 @@ export default class Jeu extends Phaser.Scene {
 			collideWorldBounds: false
 		})
 
+		this.boitesQuestion = this.physics.add.group({
+			runChildUpdate: true,
+			collideWorldBounds: false,
+			allowGravity: false,
+			immovable: true
+		})
+		this.physics.add.existing(this.platforme1);
+		//@ts-ignore
+		this.platforme1.body.collideWorldBounds = true;
+
+		this.questionBoite.getAll().forEach((element, i) => {
+			this.boitesQuestion.add(new Boite(this, 449, 259, 50, 50, 0x095a5e))
+		})
+		this.physics.add.collider(this.joueurs, this.boitesQuestion, (joueur, boite: any) => {
+			boite.setAlpha(0.1)
+		})
+		this.physics.add.collider(this.joueurs, this.platforme1)
+
 
 		const totalWidth = width * 20
 
@@ -561,7 +587,7 @@ export default class Jeu extends Phaser.Scene {
 
 	}
 
-	creationJoueur(atlas: any, frame: string, ClientId: string, x = 287, y = 464) {
+	creationJoueur(atlas: any, frame: string, ClientId: string, x = 287, y = 434) {
 		const joueur = this.add.existing(new Joueur(this, x, y, atlas, ClientId, frame, false))
 		joueur
 			.setScale(0.3)

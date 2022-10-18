@@ -770,23 +770,6 @@
             "text": "?"
         },
         {
-            "type": "Ellipse",
-            "id": "8cdf2755-08ce-4774-9048-2107bf10a27d",
-            "label": "ombre_4",
-            "scope": "PUBLIC",
-            "components": [],
-            "x": 609,
-            "y": 181,
-            "scaleX": 1.5211118867421027,
-            "scaleY": 1.5211118867421027,
-            "originY": 0,
-            "isFilled": true,
-            "fillColor": "#000000",
-            "fillAlpha": 0.3,
-            "width": 128,
-            "height": 128
-        },
-        {
             "type": "Text",
             "id": "7c9bc34d-eef4-4433-9231-1d09549015c0",
             "label": "text_2",
@@ -797,40 +780,6 @@
             "text": "Quelle est la capitale de Paris ?"
         },
         {
-            "type": "Ellipse",
-            "id": "5ca9612f-5834-4316-884e-f39b01fb656e",
-            "label": "ombre_2",
-            "scope": "PUBLIC",
-            "components": [],
-            "x": 389,
-            "y": 181,
-            "scaleX": 1.5211118867421027,
-            "scaleY": 1.5211118867421027,
-            "originY": 0,
-            "isFilled": true,
-            "fillColor": "#000000",
-            "fillAlpha": 0.3,
-            "width": 128,
-            "height": 128
-        },
-        {
-            "type": "Ellipse",
-            "id": "c5d5ab38-c204-4f1d-b514-3e9418deec88",
-            "label": "ombre_3",
-            "scope": "PUBLIC",
-            "components": [],
-            "x": 170,
-            "y": 181,
-            "scaleX": 1.5211118867421027,
-            "scaleY": 1.5211118867421027,
-            "originY": 0,
-            "isFilled": true,
-            "fillColor": "#000000",
-            "fillAlpha": 0.3,
-            "width": 128,
-            "height": 128
-        },
-        {
             "type": "Container",
             "id": "71aadf93-8a3f-4eac-b730-db3e843823c9",
             "label": "question",
@@ -838,6 +787,7 @@
             "components": [],
             "x": 400,
             "y": 61,
+            "visible": false,
             "list": [
                 {
                     "type": "Rectangle",
@@ -861,6 +811,72 @@
                     "originY": 0.5,
                     "text": "Quelle est la capitale de Paris ?",
                     "fontSize": "26px"
+                }
+            ]
+        },
+        {
+            "type": "Rectangle",
+            "id": "12fce535-4996-464f-9911-afb28c848309",
+            "label": "platforme1",
+            "scope": "PUBLIC",
+            "components": [],
+            "x": 311,
+            "y": 563,
+            "scaleX": 4.743682149891982,
+            "scaleY": 0.5042393909820959,
+            "visible": false,
+            "isFilled": true,
+            "width": 128,
+            "height": 128
+        },
+        {
+            "type": "Layer",
+            "id": "1cbaa303-861e-4924-bc50-4aa28b2cfed2",
+            "label": "QuestionBoite",
+            "scope": "PUBLIC",
+            "components": [],
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "7790de0e-adf5-4245-b029-6401a2be9e19",
+                    "label": "rectangle_6",
+                    "components": [],
+                    "x": 449,
+                    "y": 259,
+                    "scaleX": 0.43013023026658265,
+                    "scaleY": 0.43013023026658265,
+                    "visible": false,
+                    "isFilled": true,
+                    "fillColor": "#ffffff",
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "29b36ab3-8ef9-49a0-bca2-c8bc775c6f6d",
+                    "label": "rectangle_5",
+                    "components": [],
+                    "x": 449,
+                    "y": 259,
+                    "scaleX": 0.4110906677371514,
+                    "scaleY": 0.4110906677371514,
+                    "isFilled": true,
+                    "fillColor": "#095a5e",
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Text",
+                    "id": "f9b70f36-e696-4472-9ff8-2f3c6d9643db",
+                    "label": "text_4",
+                    "components": [],
+                    "x": 449,
+                    "y": 260,
+                    "scaleX": 1.8887616340344677,
+                    "scaleY": 1.8887616340344677,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "?"
                 }
             ]
         }
