@@ -27,7 +27,17 @@ export default class Boite extends Phaser.GameObjects.Rectangle {
             repeat: -1
         })
 
+
     }
+
+        toucher() {
+            this.scene.tweens.add({
+                targets: this,
+                scale: 29,
+                duration: 1000
+            })
+        }
+
 
     // preUpdate(time, delta) {}
 }

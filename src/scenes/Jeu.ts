@@ -563,8 +563,9 @@ export default class Jeu extends Phaser.Scene {
 		this.questionBoite.getAll().forEach((element, i) => {
 			this.boitesQuestion.add(new Boite(this, 449, 259, 50, 50, 0x095a5e))
 		})
-		this.physics.add.collider(this.joueurs, this.boitesQuestion, (joueur, boite: any) => {
-			boite.setAlpha(0.1)
+		this.physics.add.collider(this.joueurs, this.boitesQuestion, (joueur, boite) => {
+			// (boite as Boite).setAlpha(0.1);
+			(boite as Boite).toucher()
 		})
 		this.physics.add.collider(this.joueurs, this.platforme1)
 
