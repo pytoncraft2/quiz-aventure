@@ -787,7 +787,7 @@
             "components": [],
             "x": 400,
             "y": 61,
-            "visible": false,
+            "alpha": 0,
             "list": [
                 {
                     "type": "Rectangle",
@@ -835,6 +835,7 @@
             "label": "QuestionBoite",
             "scope": "PUBLIC",
             "components": [],
+            "visible": false,
             "list": [
                 {
                     "type": "Rectangle",

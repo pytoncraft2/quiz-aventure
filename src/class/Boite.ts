@@ -1,6 +1,8 @@
 import Jeu from "../scenes/Jeu";
 
 export default class Boite extends Phaser.GameObjects.Rectangle {
+    rect!: Phaser.GameObjects.Rectangle
+
     constructor(scene: Jeu, x: number, y: number, width: number, height: number, fillColor: any) {
         super(scene, x, y, width, height, fillColor);
 
@@ -9,6 +11,7 @@ export default class Boite extends Phaser.GameObjects.Rectangle {
 		animationRect.scaleY = 0.50013023026658265;
 		animationRect.isFilled = true;
 		animationRect.setAlpha(0.1);
+        this.rect = animationRect
         scene.add.existing(this);
 
 		const text_4 = scene.add.text(x, y, "", {});
@@ -36,6 +39,17 @@ export default class Boite extends Phaser.GameObjects.Rectangle {
                 scale: 29,
                 duration: 1000
             })
+
+            this.scene.tweens.add({
+                targets: (this.scene as any).question,
+                alpha: 1,
+                duration: 1000
+            })
+
+            //@ts-ignore
+            this.scene.question.setVisible(true)
+            //@ts-ignore
+            this.scene.question.setDepth(100)
         }
 
 

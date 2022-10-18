@@ -443,7 +443,7 @@ export default class Jeu extends Phaser.Scene {
 
 		// question
 		const question = this.add.container(400, 61);
-		question.visible = false;
+		question.alpha = 0;
 
 		// rectangle_4
 		const rectangle_4 = this.add.rectangle(0, 0, 128, 128);
@@ -470,6 +470,7 @@ export default class Jeu extends Phaser.Scene {
 
 		// QuestionBoite
 		const questionBoite = this.add.layer();
+		questionBoite.visible = false;
 
 		// rectangle_6
 		const rectangle_6 = this.add.rectangle(449, 259, 128, 128);
@@ -564,7 +565,6 @@ export default class Jeu extends Phaser.Scene {
 			this.boitesQuestion.add(new Boite(this, 449, 259, 50, 50, 0x095a5e))
 		})
 		this.physics.add.collider(this.joueurs, this.boitesQuestion, (joueur, boite) => {
-			// (boite as Boite).setAlpha(0.1);
 			(boite as Boite).toucher()
 		})
 		this.physics.add.collider(this.joueurs, this.platforme1)
