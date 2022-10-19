@@ -828,58 +828,6 @@
             "isFilled": true,
             "width": 128,
             "height": 128
-        },
-        {
-            "type": "Layer",
-            "id": "1cbaa303-861e-4924-bc50-4aa28b2cfed2",
-            "label": "QuestionBoite",
-            "scope": "PUBLIC",
-            "components": [],
-            "visible": false,
-            "list": [
-                {
-                    "type": "Rectangle",
-                    "id": "7790de0e-adf5-4245-b029-6401a2be9e19",
-                    "label": "rectangle_6",
-                    "components": [],
-                    "x": 449,
-                    "y": 259,
-                    "scaleX": 0.43013023026658265,
-                    "scaleY": 0.43013023026658265,
-                    "visible": false,
-                    "isFilled": true,
-                    "fillColor": "#ffffff",
-                    "width": 128,
-                    "height": 128
-                },
-                {
-                    "type": "Rectangle",
-                    "id": "29b36ab3-8ef9-49a0-bca2-c8bc775c6f6d",
-                    "label": "rectangle_5",
-                    "components": [],
-                    "x": 449,
-                    "y": 259,
-                    "scaleX": 0.4110906677371514,
-                    "scaleY": 0.4110906677371514,
-                    "isFilled": true,
-                    "fillColor": "#095a5e",
-                    "width": 128,
-                    "height": 128
-                },
-                {
-                    "type": "Text",
-                    "id": "f9b70f36-e696-4472-9ff8-2f3c6d9643db",
-                    "label": "text_4",
-                    "components": [],
-                    "x": 449,
-                    "y": 260,
-                    "scaleX": 1.8887616340344677,
-                    "scaleY": 1.8887616340344677,
-                    "originX": 0.5,
-                    "originY": 0.5,
-                    "text": "?"
-                }
-            ]
         }
     ],
     "plainObjects": [],

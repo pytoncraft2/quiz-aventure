@@ -468,34 +468,6 @@ export default class Jeu extends Phaser.Scene {
 		platforme1.visible = false;
 		platforme1.isFilled = true;
 
-		// QuestionBoite
-		const questionBoite = this.add.layer();
-		questionBoite.visible = false;
-
-		// rectangle_6
-		const rectangle_6 = this.add.rectangle(449, 259, 128, 128);
-		rectangle_6.scaleX = 0.43013023026658265;
-		rectangle_6.scaleY = 0.43013023026658265;
-		rectangle_6.visible = false;
-		rectangle_6.isFilled = true;
-		questionBoite.add(rectangle_6);
-
-		// rectangle_5
-		const rectangle_5 = this.add.rectangle(449, 259, 128, 128);
-		rectangle_5.scaleX = 0.4110906677371514;
-		rectangle_5.scaleY = 0.4110906677371514;
-		rectangle_5.isFilled = true;
-		rectangle_5.fillColor = 612958;
-		questionBoite.add(rectangle_5);
-
-		// text_4
-		const text_4 = this.add.text(449, 260, "", {});
-		text_4.scaleX = 1.8887616340344677;
-		text_4.scaleY = 1.8887616340344677;
-		text_4.setOrigin(0.5, 0.5);
-		text_4.text = "?";
-		questionBoite.add(text_4);
-
 		this.nuage_premier_plan = nuage_premier_plan;
 		this.ombre = ombre;
 		this.montagnes = montagnes;
@@ -504,7 +476,6 @@ export default class Jeu extends Phaser.Scene {
 		this.ombre_1 = ombre_1;
 		this.question = question;
 		this.platforme1 = platforme1;
-		this.questionBoite = questionBoite;
 
 		this.events.emit("scene-awake");
 	}
@@ -517,13 +488,12 @@ export default class Jeu extends Phaser.Scene {
 	public ombre_1!: Phaser.GameObjects.Ellipse;
 	public question!: Phaser.GameObjects.Container;
 	public platforme1!: Phaser.GameObjects.Rectangle;
-	public questionBoite!: Phaser.GameObjects.Layer;
 
 	/* START-USER-CODE */
 	joueurs!: Phaser.GameObjects.Group
 	ciel!: Phaser.GameObjects.Graphics
 	sol!: Phaser.GameObjects.Graphics
-	boitesQuestion!: Phaser.GameObjects.Group
+	groupeBoiteQuestion!: Phaser.GameObjects.Group
 
 	// Write your code here
 
@@ -551,7 +521,7 @@ export default class Jeu extends Phaser.Scene {
 			collideWorldBounds: false
 		})
 
-		this.boitesQuestion = this.physics.add.group({
+		this.groupeBoiteQuestion = this.physics.add.group({
 			runChildUpdate: true,
 			collideWorldBounds: false,
 			allowGravity: false,
@@ -561,10 +531,10 @@ export default class Jeu extends Phaser.Scene {
 		//@ts-ignore
 		this.platforme1.body.collideWorldBounds = true;
 
-		this.questionBoite.getAll().forEach((element, i) => {
-			this.boitesQuestion.add(new Boite(this, 449, 259, 50, 50, 0x095a5e))
-		})
-		this.physics.add.collider(this.joueurs, this.boitesQuestion, (joueur, boite) => {
+		// this.questionBoite.getAll().forEach((element, i) => {
+			// this.groupeBoiteQuestion.add(new Boite(this, 449, 259, 50, 50, 0x095a5e))
+		// })
+		this.physics.add.collider(this.joueurs, this.groupeBoiteQuestion, (joueur, boite) => {
 			(boite as Boite).toucher()
 		})
 		this.physics.add.collider(this.joueurs, this.platforme1)
