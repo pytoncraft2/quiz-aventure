@@ -464,8 +464,8 @@ export default class Jeu extends Phaser.Scene {
 
 		// platforme1
 		const platforme1 = this.add.rectangle(311, 563, 128, 128);
-		platforme1.scaleX = 19.15668526250834;
-		platforme1.scaleY = 0.2884717244490643;
+		platforme1.scaleX = 4.707513992591325;
+		platforme1.scaleY = -0.23407854965607622;
 		platforme1.visible = false;
 		platforme1.isFilled = true;
 
@@ -571,21 +571,33 @@ export default class Jeu extends Phaser.Scene {
 		// })
 		this.physics.add.collider(this.joueurs, this.boitesQuestion, (joueur, boite) => {
 			(boite as Boite).toucher()
-		})
-		this.physics.add.collider(this.joueurs, this.platforme1)
+		});
+		this.physics.add.collider(this.joueurs, this.platforme1);
 
 		const categorieChoisie = quiz[Object.keys(quiz)[0]];
 
-		let increment = 449;
-		categorieChoisie.map((v, i) => {
-			increment += 900;
-			const boite = new Boite(this, increment, 259, 50, 50, 0x095a5e);
-			boite.setData('titre', v.titre)
-			boite.setData('reponse', v.reponse)
-			boite.setData('indexBonneReponse', v.indexBonneReponse)
-			this.boitesQuestion.add(new Boite(this, 449, 259, 50, 50, 0x095a5e))
-			console.log(boite);
+		// let increment = 449;
+		this.questionBoite.getAll().forEach((b: any, i) => {
+			// increment += 900;
+			// const boite = new Boite(this, b.x, b.y, 50, 50, 0x095a5e);
+			// boite.setData('titre', categorieChoisie[i].titre)
+			// boite.setData('reponse', categorieChoisie[i].reponse)
+			// boite.setData('indexBonneReponse', categorieChoisie[i].indexBonneReponse)
+			// this.boitesQuestion.add(new Boite(this, 449, 259, 50, 50, 0x095a5e))
+			// console.log(boite);
+			console.log("OUI");
+			
 		})
+
+		// categorieChoisie.map((v, i) => {
+			// increment += 900;
+			// const boite = new Boite(this, increment, 259, 50, 50, 0x095a5e);
+			// boite.setData('titre', v.titre)
+			// boite.setData('reponse', v.reponse)
+			// boite.setData('indexBonneReponse', v.indexBonneReponse)
+			// this.boitesQuestion.add(new Boite(this, 449, 259, 50, 50, 0x095a5e))
+			// console.log(boite);
+		// })
 
 
 		const totalWidth = width * 20
