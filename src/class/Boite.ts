@@ -58,6 +58,11 @@ export default class Boite extends Phaser.GameObjects.Rectangle {
             this.questionEnCours.setText(question);
             // this.questionEnCours.setPosition(400, 61);
             this.questionEnCours.setDepth(100)
+            this.scene.tweens.add({
+                targets: this.questionEnCours,
+                y: "-=200",
+                duration: 500
+            })
         }
 
 
