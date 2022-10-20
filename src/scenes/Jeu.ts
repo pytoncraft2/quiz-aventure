@@ -464,8 +464,8 @@ export default class Jeu extends Phaser.Scene {
 
 		// platforme1
 		const platforme1 = this.add.rectangle(311, 563, 128, 128);
-		platforme1.scaleX = 4.743682149891982;
-		platforme1.scaleY = 0.5042393909820959;
+		platforme1.scaleX = 19.15668526250834;
+		platforme1.scaleY = 0.2884717244490643;
 		platforme1.visible = false;
 		platforme1.isFilled = true;
 
@@ -477,7 +477,6 @@ export default class Jeu extends Phaser.Scene {
 		const rectangle_6 = this.add.rectangle(449, 259, 128, 128);
 		rectangle_6.scaleX = 0.43013023026658265;
 		rectangle_6.scaleY = 0.43013023026658265;
-		rectangle_6.visible = false;
 		rectangle_6.isFilled = true;
 		questionBoite.add(rectangle_6);
 
@@ -534,11 +533,6 @@ export default class Jeu extends Phaser.Scene {
 		const quiz = this.cache.json.get('questions');
 		console.log(quiz);
 
-		
-		const categorieChoisie = quiz[Object.keys(quiz)[0]]
-		console.log(categorieChoisie);
-		
-		
 		const width = this.scale.width
 		const height = this.scale.height
 
@@ -571,15 +565,27 @@ export default class Jeu extends Phaser.Scene {
 		//@ts-ignore
 		this.platforme1.body.collideWorldBounds = true;
 		console.log(this.boitesQuestion);
-		
+
 
 		// this.questionBoite.getAll().forEach((element: any, i) => {
-			this.boitesQuestion.add(new Boite(this, 449, 259, 50, 50, 0x095a5e))
 		// })
 		this.physics.add.collider(this.joueurs, this.boitesQuestion, (joueur, boite) => {
 			(boite as Boite).toucher()
 		})
 		this.physics.add.collider(this.joueurs, this.platforme1)
+
+		const categorieChoisie = quiz[Object.keys(quiz)[0]];
+
+		let increment = 449;
+		categorieChoisie.map((v, i) => {
+			increment += 900;
+			const boite = new Boite(this, increment, 259, 50, 50, 0x095a5e);
+			boite.setData('titre', v.titre)
+			boite.setData('reponse', v.reponse)
+			boite.setData('indexBonneReponse', v.indexBonneReponse)
+			this.boitesQuestion.add(new Boite(this, 449, 259, 50, 50, 0x095a5e))
+			console.log(boite);
+		})
 
 
 		const totalWidth = width * 20
