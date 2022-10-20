@@ -471,22 +471,6 @@ export default class Jeu extends Phaser.Scene {
 
 		// QuestionBoite
 		const questionBoite = this.add.layer();
-		questionBoite.visible = false;
-
-		// rectangle_6
-		const rectangle_6 = this.add.rectangle(449, 259, 128, 128);
-		rectangle_6.scaleX = 0.43013023026658265;
-		rectangle_6.scaleY = 0.43013023026658265;
-		rectangle_6.isFilled = true;
-		questionBoite.add(rectangle_6);
-
-		// rectangle_5
-		const rectangle_5 = this.add.rectangle(449, 259, 128, 128);
-		rectangle_5.scaleX = 0.4110906677371514;
-		rectangle_5.scaleY = 0.4110906677371514;
-		rectangle_5.isFilled = true;
-		rectangle_5.fillColor = 612958;
-		questionBoite.add(rectangle_5);
 
 		// text_4
 		const text_4 = this.add.text(449, 260, "", {});
@@ -495,6 +479,22 @@ export default class Jeu extends Phaser.Scene {
 		text_4.setOrigin(0.5, 0.5);
 		text_4.text = "?";
 		questionBoite.add(text_4);
+
+		// text
+		const text = this.add.text(760, 267, "", {});
+		text.scaleX = 1.8887616340344677;
+		text.scaleY = 1.8887616340344677;
+		text.setOrigin(0.5, 0.5);
+		text.text = "?";
+		questionBoite.add(text);
+
+		// text_5
+		const text_5 = this.add.text(1039, 270, "", {});
+		text_5.scaleX = 1.8887616340344677;
+		text_5.scaleY = 1.8887616340344677;
+		text_5.setOrigin(0.5, 0.5);
+		text_5.text = "?";
+		questionBoite.add(text_5);
 
 		this.nuage_premier_plan = nuage_premier_plan;
 		this.ombre = ombre;
@@ -579,14 +579,14 @@ export default class Jeu extends Phaser.Scene {
 		// let increment = 449;
 		this.questionBoite.getAll().forEach((b: any, i) => {
 			// increment += 900;
-			// const boite = new Boite(this, b.x, b.y, 50, 50, 0x095a5e);
-			// boite.setData('titre', categorieChoisie[i].titre)
-			// boite.setData('reponse', categorieChoisie[i].reponse)
-			// boite.setData('indexBonneReponse', categorieChoisie[i].indexBonneReponse)
-			// this.boitesQuestion.add(new Boite(this, 449, 259, 50, 50, 0x095a5e))
+			const boite = new Boite(this, b.x, b.y, 50, 50, 0x095a5e);
+			boite.setData('titre', categorieChoisie[i].titre)
+			boite.setData('reponse', categorieChoisie[i].reponse)
+			boite.setData('indexBonneReponse', categorieChoisie[i].indexBonneReponse)
+			this.boitesQuestion.add(boite)
 			// console.log(boite);
 			console.log("OUI");
-			
+
 		})
 
 		// categorieChoisie.map((v, i) => {
