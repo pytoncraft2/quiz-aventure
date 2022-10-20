@@ -571,10 +571,16 @@ export default class Jeu extends Phaser.Scene {
 
 		// this.questionBoite.getAll().forEach((element: any, i) => {
 		// })
-		this.physics.add.collider(this.joueurs, this.boitesQuestion, (joueur, boite: any) => {
+		var colisionBoiteJoueur = this.physics.add.collider(this.joueurs, this.boitesQuestion, (joueur, boite: any) => {
 			(boite as Boite).toucher()
 			console.log(boite.getData('titre'));
+			boite.body.enable = false;
 		});
+
+		// var collider = this.physics.add.collider(sprite, group, null, function () {
+			// this.physics.world.removeCollider(collider);
+		// }, this);
+
 		this.physics.add.collider(this.joueurs, this.platforme1);
 
 		const categorieChoisie = quiz[Object.keys(quiz)[0]];
