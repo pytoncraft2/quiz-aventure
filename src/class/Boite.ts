@@ -43,25 +43,35 @@ export default class Boite extends Phaser.GameObjects.Rectangle {
             })
 
             this.scene.tweens.add({
-                targets: (this.scene as any).question,
-                alpha: 1,
-                duration: 1000
+                targets: this,
+                scale: 1,
+                delay: 1000,
+                duration: 1000,
+                onComplete: () => {
+                    this.questionEnCours.setText('✅')
+                    this.animationBounce(this.questionEnCours, '+')
+                }
             })
-
-            //@ts-ignore
-            // this.scene.question.setVisible(true)
-            //@ts-ignore
-            // this.scene.question.setDepth(100)
         }
 
-        setQuestion(question: string) {
+        setQuestion(question: string, signe: string = '-') {
             this.questionEnCours.setText(question);
-            // this.questionEnCours.setPosition(400, 61);
             this.questionEnCours.setDepth(100)
+            this.animationBounce(this.questionEnCours)
+            // this.scene.tweens.add({
+            //     targets: this.questionEnCours,
+            //     y: "-=200",
+            //     ease: 'Bounce',
+            //     duration: 900
+            // })
+        }
+
+        animationBounce(targets: Phaser.GameObjects.Text, signe: string = '-') {
             this.scene.tweens.add({
-                targets: this.questionEnCours,
-                y: "-=200",
-                duration: 500
+                targets,
+                y: `${signe}=200`,
+                ease: 'Bounce',
+                duration: 900
             })
         }
 
