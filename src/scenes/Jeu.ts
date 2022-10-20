@@ -7,7 +7,6 @@ import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import Joueur from "../class/Joueur"
 import Boite from "../class/Boite"
-import { log } from "console";
 /* END-USER-IMPORTS */
 
 export default class Jeu extends Phaser.Scene {
@@ -539,57 +538,32 @@ export default class Jeu extends Phaser.Scene {
 			allowGravity: false,
 			immovable: true
 		})
-		const platforme = this.physics.add.existing(this.platforme1);
+		this.physics.add.existing(this.platforme1);
 		//@ts-ignore
 		this.platforme1.body.allowGravity = false;
 		//@ts-ignore
 		this.platforme1.body.immovable = true;
-		console.log(this.boitesQuestion);
 
-
-		// this.questionBoite.getAll().forEach((element: any, i) => {
-		// })
-		var colisionBoiteJoueur = this.physics.add.collider(this.joueurs, this.boitesQuestion, (joueur, boite: any) => {
+		this.physics.add.collider(this.joueurs, this.boitesQuestion, (_joueur, boite: any) => {
 			(boite as Boite).toucher();
 			(boite as Boite).setQuestion(boite.getData('titre'));
 			console.log(boite.getData('titre'));
 			boite.body.enable = false;
 		});
 
-		// var collider = this.physics.add.collider(sprite, group, null, function () {
-			// this.physics.world.removeCollider(collider);
-		// }, this);
-
 		this.physics.add.collider(this.joueurs, this.platforme1);
 
 		const categorieChoisie = quiz[Object.keys(quiz)[0]];
 
-		// let increment = 449;
 		this.questionBoite.getAll().forEach((b: any, i) => {
-			// increment += 900;
 			const boite = new Boite(this, b.x, b.y, 50, 50, 0x095a5e);
 			boite.setData('titre', categorieChoisie[i].titre)
 			boite.setData('reponse', categorieChoisie[i].reponse)
 			boite.setData('indexBonneReponse', categorieChoisie[i].indexBonneReponse)
 			this.boitesQuestion.add(boite)
-			// console.log(boite);
-			console.log("OUI");
-
 		})
 
-		// categorieChoisie.map((v, i) => {
-			// increment += 900;
-			// const boite = new Boite(this, increment, 259, 50, 50, 0x095a5e);
-			// boite.setData('titre', v.titre)
-			// boite.setData('reponse', v.reponse)
-			// boite.setData('indexBonneReponse', v.indexBonneReponse)
-			// this.boitesQuestion.add(new Boite(this, 449, 259, 50, 50, 0x095a5e))
-			// console.log(boite);
-		// })
-
-
 		const totalWidth = width * 20
-
 
 		const joueur = this.creationJoueur('boy_atlas', 'idle1', 'id')
 		this.cameras.main.setBounds(0, 0, width * 20, height)
