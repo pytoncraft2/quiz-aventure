@@ -463,7 +463,7 @@ export default class Jeu extends Phaser.Scene {
 		question.add(text_3);
 
 		// platforme1
-		const platforme1 = this.add.rectangle(311, 563, 128, 128);
+		const platforme1 = this.add.rectangle(311, 549, 128, 128);
 		platforme1.scaleX = 4.707513992591325;
 		platforme1.scaleY = -0.23407854965607622;
 		platforme1.visible = false;
@@ -561,16 +561,19 @@ export default class Jeu extends Phaser.Scene {
 			allowGravity: false,
 			immovable: true
 		})
-		this.physics.add.existing(this.platforme1);
+		const platforme = this.physics.add.existing(this.platforme1);
 		//@ts-ignore
-		this.platforme1.body.collideWorldBounds = true;
+		this.platforme1.body.allowGravity = false;
+		//@ts-ignore
+		this.platforme1.body.immovable = true;
 		console.log(this.boitesQuestion);
 
 
 		// this.questionBoite.getAll().forEach((element: any, i) => {
 		// })
-		this.physics.add.collider(this.joueurs, this.boitesQuestion, (joueur, boite) => {
+		this.physics.add.collider(this.joueurs, this.boitesQuestion, (joueur, boite: any) => {
 			(boite as Boite).toucher()
+			console.log(boite.getData('titre'));
 		});
 		this.physics.add.collider(this.joueurs, this.platforme1);
 
