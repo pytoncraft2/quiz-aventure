@@ -422,26 +422,6 @@ export default class Jeu extends Phaser.Scene {
 		ellipse_40.isFilled = true;
 		etoiles.add(ellipse_40);
 
-		// ombre_1
-		const ombre_1 = this.add.ellipse(1096, 523, 128, 128);
-		ombre_1.scaleX = 1.0473994709996521;
-		ombre_1.scaleY = 0.25948884278005596;
-		ombre_1.isFilled = true;
-		ombre_1.fillColor = 0;
-		ombre_1.fillAlpha = 0.3;
-
-		// text_1
-		const text_1 = this.add.text(1095, 363, "", {});
-		text_1.scaleX = 2.876392581006588;
-		text_1.scaleY = 2.876392581006588;
-		text_1.setOrigin(0.5, 0.5);
-		text_1.text = "?";
-
-		// text_2
-		const text_2 = this.add.text(1108, 205, "", {});
-		text_2.setOrigin(0.5, 0);
-		text_2.text = "Quelle est la capitale de Paris ?";
-
 		// question
 		const question = this.add.container(400, 61);
 		question.alpha = 0;
@@ -501,7 +481,6 @@ export default class Jeu extends Phaser.Scene {
 		this.montagnes = montagnes;
 		this.nuages = nuages;
 		this.etoiles = etoiles;
-		this.ombre_1 = ombre_1;
 		this.question = question;
 		this.platforme1 = platforme1;
 		this.questionBoite = questionBoite;
@@ -514,7 +493,6 @@ export default class Jeu extends Phaser.Scene {
 	public montagnes!: Phaser.GameObjects.Container;
 	public nuages!: Phaser.GameObjects.Container;
 	public etoiles!: Phaser.GameObjects.Container;
-	public ombre_1!: Phaser.GameObjects.Ellipse;
 	public question!: Phaser.GameObjects.Container;
 	public platforme1!: Phaser.GameObjects.Rectangle;
 	public questionBoite!: Phaser.GameObjects.Layer;

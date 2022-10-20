@@ -45,7 +45,7 @@ export default class Boite extends Phaser.GameObjects.Rectangle {
             this.scene.tweens.add({
                 targets: this,
                 scale: 1,
-                delay: 1000,
+                delay: 2000,
                 duration: 1000,
                 onComplete: () => {
                     this.questionEnCours.setText('✅')
