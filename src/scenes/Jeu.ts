@@ -572,7 +572,8 @@ export default class Jeu extends Phaser.Scene {
 		// this.questionBoite.getAll().forEach((element: any, i) => {
 		// })
 		var colisionBoiteJoueur = this.physics.add.collider(this.joueurs, this.boitesQuestion, (joueur, boite: any) => {
-			(boite as Boite).toucher()
+			(boite as Boite).toucher();
+			(boite as Boite).setQuestion(boite.getData('titre'));
 			console.log(boite.getData('titre'));
 			boite.body.enable = false;
 		});
