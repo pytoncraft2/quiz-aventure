@@ -7,6 +7,7 @@ import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import Joueur from "../class/Joueur"
 import Boite from "../class/Boite"
+import { log } from "console";
 /* END-USER-IMPORTS */
 
 export default class Jeu extends Phaser.Scene {
@@ -529,6 +530,15 @@ export default class Jeu extends Phaser.Scene {
 
 	create() {
 		this.editorCreate();
+
+		const quiz = this.cache.json.get('questions');
+		console.log(quiz);
+
+		
+		const categorieChoisie = quiz[Object.keys(quiz)[0]]
+		console.log(categorieChoisie);
+		
+		
 		const width = this.scale.width
 		const height = this.scale.height
 
@@ -560,10 +570,12 @@ export default class Jeu extends Phaser.Scene {
 		this.physics.add.existing(this.platforme1);
 		//@ts-ignore
 		this.platforme1.body.collideWorldBounds = true;
+		console.log(this.boitesQuestion);
+		
 
-		this.questionBoite.getAll().forEach((element, i) => {
+		// this.questionBoite.getAll().forEach((element: any, i) => {
 			this.boitesQuestion.add(new Boite(this, 449, 259, 50, 50, 0x095a5e))
-		})
+		// })
 		this.physics.add.collider(this.joueurs, this.boitesQuestion, (joueur, boite) => {
 			(boite as Boite).toucher()
 		})

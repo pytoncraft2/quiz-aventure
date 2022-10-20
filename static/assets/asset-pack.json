@@ -17,6 +17,11 @@
                 "textureURL": "assets/girl_atlas.png",
                 "type": "atlas",
                 "key": "girl_atlas"
+            },
+            {
+                "url": "assets/questions.json",
+                "type": "json",
+                "key": "questions"
             }
         ]
     },

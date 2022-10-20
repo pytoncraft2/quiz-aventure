@@ -24,9 +24,10 @@ export default class Boite extends Phaser.GameObjects.Rectangle {
         scene.add.tween({
             targets: animationRect,
             scale: "+=0.04",
-            alpha: 0.2,
+            alpha: 0.3,
             yoyo: true,
-            ease: "Bounce.easeIn",
+            ease: "easeIn",
+            duration: 700,
             repeat: -1
         })
 
