@@ -14,3 +14,6 @@
                   les scouts fond du bateau sur l'eau
   
   
+Construire un véhicule qui permet d'avancer rapidement,
+Un bloc fait tomber un un véhicule
+Recuperer tout les matérieaux pour arriver le plus rapidement à l'arrivée
