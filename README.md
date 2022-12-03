@@ -21,3 +21,5 @@ Recuperer tout les matérieaux pour arriver le plus rapidement à l'arrivée
 Scouts dans le futur -> à quoi sa peut ressemebler ? -> jeu du triangle gemotry dash
 
 Un scouts qui fait un drole de rêve
+
+Construire un bateau pour traverser le fleuve -> comment construire le bateau ? repondre au questions permet d'obtenir des pièces pour le bateau
