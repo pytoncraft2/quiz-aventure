@@ -25,3 +25,5 @@ Un scouts qui fait un drole de rêve
 Construire un bateau pour traverser le fleuve -> comment construire le bateau ? repondre au questions permet d'obtenir des pièces pour le bateau
 
 Shuriken | couteau
+
+Un bizon qui arrive à tout allure , le jeux ralentit quand on commence à repondre à la question
