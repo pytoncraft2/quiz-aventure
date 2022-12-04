@@ -47,3 +47,11 @@ Savoir se rappeler des choses qu'on a vu pour répondre à certaines questions (
 
 Quelle année à l'arbre
 Chasse aux champignos vénéneux
+
+Des panneaux d'indications sur l'objectif à faire/réaliser  
+_______________
+|             |  
+|_____________|
+      |  |
+      |  |
+      |  |
