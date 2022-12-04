@@ -31,3 +31,19 @@ Un bizon qui arrive à tout allure , le jeux ralentit quand on commence à repon
 Avancer en mode furtif pour dompter un bizon ou un cheval 
 
 Pouvoir augmenter et diminuer la vitesse de son joueur [ ___[]___________]
+
+Au début de l'aventure le personnage n'ai pas scout, le but est d'en devenir un
+A chaque question repondu il gagne un element pour devenir scout
+
+Andurance marche scout,
+
+questions à propos des valeurs scouts
+
+Monter dans les arbres
+
+Jeu de piste marques sur les arbres
+
+Savoir se rappeler des choses qu'on a vu pour répondre à certaines questions (nombre de marques vu dans la forêt)
+
+Quelle année à l'arbre
+Chasse aux champignos vénéneux
