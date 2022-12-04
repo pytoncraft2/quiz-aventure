@@ -27,3 +27,7 @@ Construire un bateau pour traverser le fleuve -> comment construire le bateau ? 
 Shuriken | couteau
 
 Un bizon qui arrive à tout allure , le jeux ralentit quand on commence à repondre à la question
+
+Avancer en mode furtif pour dompter un bizon ou un cheval 
+
+Pouvoir augmenter et diminuer la vitesse de son joueur [ ___[]___________]
