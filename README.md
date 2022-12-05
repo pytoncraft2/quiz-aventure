@@ -57,3 +57,7 @@ _______________
       |  |
 
 Dompter des animaux pour faire certains défis
+
+Faire un jeu de piste avec des 
+
+Faire des enigmes qui permettent de découvrir les outils de latoilescout (codeur/décodeur)
