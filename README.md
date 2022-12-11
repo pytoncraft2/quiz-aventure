@@ -65,3 +65,5 @@ Faire des enigmes qui permettent de découvrir les outils de latoilescout (codeu
 Un jeu par cicle | un moment jeu d'arcade actif | un moment question |
 
 "INTRO: Bienvenue ! Trouve ton foulard !"
+
+Objectif récuperer les objects qui on de la valeurs pour un scouts (foulard, couteaux, drapeaux, ecusson...)
